@@ -2,10 +2,10 @@ name =
 package_name =
 description =
 run_preparing = false
-install(){
-    system('apt-get install -y ${package_name}')
-}
-uninstall(){
-    system('apt-get purge ${package_name} -y')
-    system('apt-get autoremove --purge -y')
-}
+def install
+  system('apt-get install -y ${package_name}')
+end
+def uninstall
+  system('apt-get purge ${package_name} -y')
+  system('apt-get autoremove --purge -y')
+end
