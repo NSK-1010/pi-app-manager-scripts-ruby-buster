@@ -1,9 +1,10 @@
-name="blueman"
-package_name="blueman"
-description="Bluetoothを扱うためのソフトウェア"
-run_preparing=false
+name = "blueman"
+package_name = "blueman"
+description = "Bluetoothを扱うためのソフトウェア"
+run_preparing = false
 
-install(){
+def install
+system("
     #-- 関数定義 --#
     # ウィンドウの基本型
     function window () {
@@ -101,11 +102,9 @@ install(){
 
     apt-get install -y ${package_name}
     gsettings set org.blueman.transfer shared-path /home/$set_user/Downloads/
+")
 
-
-}
-
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+def uninstall
+  system("apt-get purge ${package_name} -y")
+  system("apt-get autoremove --purge -y")
+end
