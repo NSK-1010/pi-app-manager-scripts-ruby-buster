@@ -3,9 +3,9 @@ package_name = "chromium"
 description = "Chromiumブラウザー"
 run_preparing = false
 def install
-  system("apt-get install -y ${package_name}")
+  system("apt-get install -y chromium")
 end
 def uninstall
-  system("apt-get purge ${package_name} -y")
+  system("apt-get purge chromium -y")
   system("apt-get autoremove --purge -y")
 end
