@@ -1,11 +1,11 @@
-name="gnome-system-monitor"
-package_name="gnome-system-monitor"
-description="GUIシステムモニター"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "gnome-system-monitor"
+package_name = "gnome-system-monitor"
+description = "GUIシステムモニター"
+run_preparing = false
+def install
+  system("apt-get install -y gimp")
+end
+def uninstall
+  system("apt-get purge gnome-system-monitor -y")
+  system("apt-get autoremove --purge -y")
+end
