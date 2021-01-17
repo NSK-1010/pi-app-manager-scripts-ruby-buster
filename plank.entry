@@ -4,7 +4,7 @@ description = "Macのようなドックランチャー"
 run_preparing = false
 def install
   system("apt-get install plank")
-}
+end
 def uninstall
   system("apt-get purge -y plank")
   SYSTEM("apt-get autoremove --purge -y")
