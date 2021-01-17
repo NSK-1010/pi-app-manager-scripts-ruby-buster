@@ -1,11 +1,11 @@
-name="htop"
-package_name="htop"
-description="CUIのシステムモニター"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "htop"
+package_name = "htop"
+description = "CUIのシステムモニター"
+run_preparing = false
+def install
+  system("apt-get install -y htop")
+end
+def uninstall
+  system("apt-get purge htop -y")
+  system("apt-get autoremove --purge -y")
+end
