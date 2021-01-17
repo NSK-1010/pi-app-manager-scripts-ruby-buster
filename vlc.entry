@@ -1,11 +1,11 @@
-name="VLCメディアプレイヤー"
-package_name="vlc"
-description="様々な形式に対応したメディアプレイヤー"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "VLCメディアプレイヤー"
+package_name = "vlc"
+description = "様々な形式に対応したメディアプレイヤー"
+run_preparing = false
+def install
+  system("apt-get install -y vlc")
+end
+def uninstall
+  system("apt-get purge vlc -y")
+  system("apt-get autoremove --purge -y")
+end
