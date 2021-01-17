@@ -1,11 +1,11 @@
-name="ffmpeg"
-package_name="ffmpeg"
-description="ffmpeg動画ファイルの変換を行うことができるソフトウェア"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
+name = "ffmpeg"
+package_name = "ffmpeg"
+description = "ffmpeg動画ファイルの変換を行うことができるソフトウェア"
+run_preparing = false
+def install
+  system("apt-get install -y ffmpeg")
 }
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+def uninstall
+  system("apt-get purge ffmpeg -y")
+  system("apt-get autoremove --purge -y")
+end
