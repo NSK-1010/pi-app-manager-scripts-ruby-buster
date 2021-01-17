@@ -1,0 +1,11 @@
+name="fcitx-mozc"
+package_name="fcitx-mozc"
+description="日本語入力システム"
+run_preparing=false
+install(){
+    apt-get install -y ${package_name}
+}
+uninstall(){
+    apt-get purge ${package_name} fcitx -y
+    apt-get autoremove --purge -y
+}
