@@ -1,11 +1,11 @@
-name="medit"
-package_name="medit"
-description="軽量なテキストエディタ"
-run_preparing=false
-install(){
-    sudo apt install ${package_name} -y
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "medit"
+package_name = "medit"
+description = "軽量なテキストエディタ"
+run_preparing = false
+def install
+  system("apt-get install medit -y")
+end
+def uninstall
+  system("apt-get purge medit -y")
+  system("apt-get autoremove --purge -y")
+end
