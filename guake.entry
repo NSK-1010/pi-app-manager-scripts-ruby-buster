@@ -1,11 +1,11 @@
-name="Guake-Terminal"
-package_name="guake"
-description="スタイリッシュなターミナルエミュレータ"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "Guake-Terminal"
+package_name = "guake"
+description = "スタイリッシュなターミナルエミュレータ"
+run_preparing = false
+def install
+  system("apt-get install -y guake")
+end
+def uninstall
+  system("apt-get purge guake -y")
+  system("apt-get autoremove --purge -y")
+end
