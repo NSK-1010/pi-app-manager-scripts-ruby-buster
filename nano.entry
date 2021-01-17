@@ -1,11 +1,10 @@
-name="nano"
-package_name="nano"
-description="CUIテキストエディター"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "nano"
+package_name = "nano"
+run_preparing = false
+def install
+  system("apt-get install -y nano")
+end
+def uninstall
+  system("apt-get purge nano -y")
+  system("apt-get autoremove --purge -y")
+end
