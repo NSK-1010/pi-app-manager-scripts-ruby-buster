@@ -1,11 +1,11 @@
-name="vim"
-package_name="vim"
-description="CUIテキストエディター"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
+name = "vim"
+package_name = "vim"
+description = "CUIテキストエディター"
+run_preparing = false
+def install
+  system("apt-get install -y vim")
 }
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
+def uninstall
+  system("apt-get purge vim -y")
+  system("apt-get autoremove --purge -y")
 }
