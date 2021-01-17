@@ -1,11 +1,11 @@
-name="firefox-esr"
-package_name="firefox"
-description="firefoxブラウザー(長期サポート版)"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = "firefox-esr"
+package_name = "firefox-esr"
+description = "firefoxブラウザー(長期サポート版)"
+run_preparing = false
+def install
+  system("apt-get install -y firefox-esr")
+end
+def uninstall
+  system("apt-get purge firefox-esr -y")
+  system("apt-get autoremove --purge -y")
+end
