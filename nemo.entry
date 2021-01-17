@@ -1,11 +1,11 @@
-name=Nemo
-package_name=nemo
-description="NautilusからフォークしたMateのファイルマネージャー"
-run_preparing=false
-install(){
-    apt-get install -y ${package_name}
-}
-uninstall(){
-    apt-get purge ${package_name} -y
-    apt-get autoremove --purge -y
-}
+name = Nemo
+package_name = nemo
+description = "NautilusからフォークしたMateのファイルマネージャー"
+run_preparing = false
+def install
+  system("apt-get install -y nemo")
+end
+def uninstall
+  system("apt-get purge nemo -y")
+  system("apt-get autoremove --purge -y")
+end
