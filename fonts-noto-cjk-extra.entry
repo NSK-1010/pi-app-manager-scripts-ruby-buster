@@ -1,0 +1,11 @@
+name = "Noto-CJK-extra"
+package_name = "fonts-noto-cjk-extra"
+description = "CJK Font"
+run_preparing = false
+def install
+  system('apt-get install -y fonts-noto-cjk-extra')
+end
+def uninstall
+  system('apt-get purge fonts-noto-cjk-extra -y')
+  system('apt-get autoremove --purge -y')
+end
